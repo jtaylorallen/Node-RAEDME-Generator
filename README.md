@@ -2,7 +2,6 @@
   
   [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   
-  deployment:  
   ## Description
   
   A node js application that generates a README file for a users project/repository. the application asks the user qustions to be filled in about each section
@@ -17,14 +16,13 @@
   
   ## Installation-Instructions
   
-  For this project to function please run NODE JS and the npm package inquires: run the command:
-   
-  ```node/directory/index.js```
+  For this project to function please run NODE JS and the npm package inquires: run the command:  
+  ```npm install inquirer```
   
   ## Usage-Information
   
-  node/directory/index.js  
-  
+  node/directory/index.js   
+  ```node index.js```
   
   ## License
   
@@ -36,11 +34,11 @@
   
   ## Test-Instructions
   
-  This repository is for a homework assignment no cotribution
+  No Test
   
   ## Questions
   
-  GitHub Username: [@@jtaylorallen](https://github.com/@jtaylorallen)  
+  GitHub Username: [@jtaylorallen](https://github.com/jtaylorallen)  
   
-  Reach out to me at [](mailto:) for questions  
+  Reach out to me at [j.taylorallen10@gmail.com](mailto:j.taylorallen10@gmail.com) for questions  
   
