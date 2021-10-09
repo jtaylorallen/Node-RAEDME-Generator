@@ -1,4 +1,4 @@
-# README Generaator
+# README Generator
   ![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)
   This project uses MIT License.
   
