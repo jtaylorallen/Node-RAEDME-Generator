@@ -8,96 +8,95 @@ const generateMarkdown = require("./utils/generateMarkdown.js");
 
 const questions = [
     {
-        //filename
+        //Title of the project
         type: 'input',
-        message: 'Enter the filename of the project',
-        name: 'fileName',
-    },
-    {
-        //title of project
-        type: 'input',
-        message: 'Enter the title of the project',
+        message: 'What is the title of you project?',
         name: 'title',
     },
     {
-        //deployedUrl of project
+        //Description
         type: 'input',
-        message: 'Enter the deployed link of the project (if deployed)',
-        name: 'deployedUrl',
+        message: 'Tell the users about your project.',
+        name: 'description',
     },
     {
-        //description
+        //Live link of project
         type: 'input',
-        message: 'Enter the description of the project',
-        name: 'description',
+        message: 'What is your projects active URL?',
+        name: 'URL',
     },
     {
         //install
         type: 'input',
-        message: 'Enter the optimal install method',
+        message: 'How do you install your project?',
         name: 'install',
     },
     {
         //install code
         type: 'input',
-        message: 'Enter a installation code example (leave blank if not needed)',
+        message: 'What code do you use to install your project?',
         name: 'install_code',
     },
     {
         //usage
         type: 'input',
-        message: 'Enter the usage information',
+        message: 'How do you use your project?',
         name: 'usage',
     },
     {
         //usage code
         type: 'input',
-        message: 'Enter a usage code example (leave blank if not needed)',
+        message: 'What code do you use to run your project? ',
         name: 'usage_code',
-    },
-    {
-        //license
-        type: 'list',
-        message: 'Enter the license of the project',
-        name: 'license',
-        choices: [
-            "None",
-            "Apache 2.0 License",
-            "BSD 3-Clause License",
-            "MIT License",
-            "IBM Public License Version 1.0",
-        ]
     },
     {
         //tests
         type: 'input',
-        message: 'Enter the test conditions',
+        message: 'What test did you run on your project, if any?',
         name: 'test',
     },
     {
         //contributions
         type: 'input',
-        message: 'Enter the Contribution Guidelines',
+        message: 'Did anyone contribute to this project, please add them?',
         name: 'contribution',
+    },
+    {
+        //acknowledgement
+        type: 'input',
+        message: 'Would you like to acknowledge anyone who helped you? ',
+        name: 'acknowledgement',
+    },
+    {
+        //resources
+        type: 'input',
+        message: 'What resourses did you use to create this project?',
+        name: 'resources',
+    },
+    {
+        //license
+        type: 'list',
+        message: 'Which license did you use for your project?',
+        name: 'license',
+        choices: [
+            "Apache 2.0 License",
+            "MIT License",
+            "GPLv3 License",
+            "Unlicense",
+        ]
     },
     {
         //github username
         type: 'input',
-        message: 'Enter your github username',
+        message: 'What is your Github user name?',
         name: 'github',
     },
-    {
-        //email address
-        type: 'input',
-        message: 'Enter your contact email address',
-        name: 'email',
-    }
 ];
 
 // TODO: Create a function to write README file
 
-function writeToFile(fileName, data) {
-    fs.writeFile(`${fileName}.md`, generateMarkdown(data), (err) =>
+function writeToFile(data) {
+    fs.writeFile(`README.md`, generateMarkdown(data), (err) =>
     err ? console.error("error") : console.log("success"))
 }
 // TODO: Create a function to initialize app
@@ -105,7 +104,7 @@ function writeToFile(fileName, data) {
 function init() {
     inquirer.prompt(questions)
     .then((response) =>
-        writeToFile(response.fileName, response)
+        writeToFile(response)
     );
 }
 

@@ -2,120 +2,117 @@
 // If there is no license, return an empty string
 
 function renderLicenseBadge(license) {
-  let str = "";
+  let licenseIcon = "";
   switch (license) {
     case "Apache 2.0 License":
-      str = "https://img.shields.io/badge/License-Apache%202.0-blue.svg";
-      break;
-    case "BSD 3-Clause License":
-      str = "https://img.shields.io/badge/License-BSD%203--Clause-blue.svg";
+      licenseIcon = "![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg";
       break;
     case "MIT License":
-      str = "https://img.shields.io/badge/License-MIT-yellow.svg";
+      licenseIcon = "![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)";
       break;
-    case "IBM Public License Version 1.0":
-      str = "https://img.shields.io/badge/License-IPL%201.0-blue.svg";
+    case "GPLv3 License":
+        licenseIcon = "![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)";
       break;
-    default:
-      str = "";
+    case "Unlicense":
+      licenseIcon = "![Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)";
       break;
   }
 
-  return str;
+  return licenseIcon;
 }
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 
 function renderLicenseLink(license) {
-  var str = "";
+  var licenseURL = "";
   switch (license) {
     case "Apache 2.0 License":
-      str = "https://opensource.org/licenses/Apache-2.0";
-      break;
-    case "BSD 3-Clause License":
-      str = "https://opensource.org/licenses/BSD-3-Clause";
+      licenseURL = `[Apache 2.0 License](https://opensource.org/licenses/Apache-2.0)`;
       break;
     case "MIT License":
-      str = "https://opensource.org/licenses/MIT";
+      licenseURL = `[MIT License](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)`;
       break;
-    case "IBM Public License Version 1.0":
-      str = "https://opensource.org/licenses/IPL-1.0";
+    case "GPLv3 License":
+      licenseURL = `[GPLv3 License](https://opensource.org/licenses/)`;
       break;
-    default:
-      str = "";
+    case "Unlicense":
+      licenseURL = `[$(license)](http://unlicense.org/)`;
       break;
   }
 
-  return str;
+  return licenseURL;
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 
 function renderLicenseSection(license) {
-  return  `[![License](${renderLicenseBadge(license)})](${renderLicenseLink(license)})`
+  return `This project uses ${license}.`
 }
 
 // TODO: Create a function to generate markdown for README
 
 function generateMarkdown(data) {
-  if (data.install_code) {
-    data.install_code = `\`\`\`${data.install_code}\`\`\``
-  } else {
-    data.install_code = ``
-  }
-
-  if (data.usage_code) {
-    data.usage_code = `\`\`\`${data.usage_code}\`\`\``
-  } else {
-    data.usage_code = ``
-  }
-
   return `# ${data.title}
-  
+  ${renderLicenseBadge(data.license)}
   ${renderLicenseSection(data.license)}
   
-  deployment:${data.deployedUrl}  
   ## Description
   
   ${data.description}
-  
+
+  <!-- [URL](${data.URL}) -->
+
   ## Table of Content
   
-  [Installation Instructions](#installation-instructions)  
-  [Usage Information](#usage-information)  
-  [Contribution Guidelines](#contribution-guidelines)  
-  [Test Instructions](#test-instructions)  
-  [Questions](#questions)  
+  [Installation](#installation)  
+  [Usage](#usage)
+  [Visual](#visual)  
+  [Test](#test)
+  [Contribution](#contribution) 
+  [Acknowledgement](#acknowledgement)
+  [Resources](#resources)
+  [License](#license) 
+  [Contact Me](#contactme)  
   
-  ## Installation-Instructions
+  ## Installation
   
   ${data.install}  
   ${data.install_code}
   
-  ## Usage-Information
+  ## Usage
   
   ${data.usage}  
   ${data.usage_code}
+
+  ## Visuals
+
   
-  ## License
-  
-  ${data.license}
-  
-  ## Contribution-Guidelines
-  
-  ${data.contribution}
-  
-  ## Test-Instructions
+  ## Test
   
   ${data.test}
   
-  ## Questions
+  ## Contribution
+
+  ${data.contribution}
+
+  ## Acknowledgement
+
+  ${data.acknowledgement}
+
+  ## License
+  
+  ${renderLicenseLink(data.license)}
+
+  ## Resources
+
+  ${data.resources}
+  
+  ## Contact Me
   
   GitHub Username: [@${data.github}](https://github.com/${data.github})  
-  
-  Reach out to me at [${data.email}](mailto:${data.email}) for questions  
+   
   `;
 }
 
