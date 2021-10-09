@@ -49,7 +49,7 @@
 
   ## Acknowledgement
 
-    Thank you, to the my class instructor, TAs, and my tutor: David Spires, Joey Sick, Cynthia Gracis, Ian Sears, Andy Mendez, and John Hernandez 
+  Thank you, to the my class instructor, TAs, and my tutor: David Spires, Joey Sick, Cynthia Gracia, Ian Sears, Andy Mendes, and John Hernandez
 
   ## License
   
@@ -58,6 +58,7 @@
   ## Resources
 
    Markdown License Badges - https://gist.github.com/lukas-h/2a5d00690736b4c3a7ba
+   W3school for the switch code - https://www.w3schools.com/js/js_switch.asp
   
   ## Contact Me
   
