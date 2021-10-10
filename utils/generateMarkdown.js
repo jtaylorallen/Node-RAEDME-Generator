@@ -5,10 +5,10 @@ function renderLicenseBadge(license) {
   let licenseIcon = "";
   switch (license) {
     case "Apache 2.0 License":
-      licenseIcon = "![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg";
+      licenseIcon = "![Apache 2.0 License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)";
       break;
     case "MIT License":
-      licenseIcon = "![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)";
+      licenseIcon = "![MIT License](https://img.shields.io/badge/l/atomic-design-ui.svg?)";
       break;
     case "GPLv3 License":
         licenseIcon = "![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)";
